@@ -10,6 +10,7 @@ class UsersController < ApplicationController
   # GET /users/1
   # GET /users/1.json
   def show
+    UserNotificationMailer.notification_mailer(User.last,@user).deliver
   end
 
   # GET /users/new
