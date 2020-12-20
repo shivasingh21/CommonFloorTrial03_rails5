@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  get 'search', to: 'properties#search' 
+  # get 'search', to: 'properties#search' 
   resources :properties
   resources :users
   root 'properties#index'

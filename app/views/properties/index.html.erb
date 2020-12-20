@@ -3,7 +3,7 @@
 <h1>Properties</h1>
 
 <h1>Search by</h1>
-<%= form_tag(search_path, method: "get") do  %>
+<%= form_tag(properties_path, method: "get") do  %>
   <%= select_tag "property_type", options_for_select(['Property','apartment','house','villa'])%>
   <%= select_tag "property_status", options_for_select(['Status' ,'rental', 'sold', 'buy' ])%>
   <%= select_tag "location", options_for_select( [ 'Location', 'bhopal', 'kolkata' ])%>

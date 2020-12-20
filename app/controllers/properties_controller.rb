@@ -5,7 +5,7 @@ class PropertiesController < ApplicationController
   # GET /properties.json
   def index
     # byebug
-    @properties = Property.all
+    @properties = Property.property_search(params)
 
   end
 
@@ -62,12 +62,12 @@ class PropertiesController < ApplicationController
       format.json { head :no_content }
     end
   end
-  def search
-        @properties = Property.all
-        @properties = @properties.where(property_type: params[:property_type]) if params[:property_type] != "Property"
-        @properties = @properties.where(property_status: params[:property_status]) if params[:property_status] != "Status"
-        @properties = @properties.where(location: params[:location]) if params[:location] != "Location"
-  end
+  # def search
+  #       # @properties = Property.all
+  #       # @properties = @properties.where(property_type: params[:property_type]) if params[:property_type] != "Property"
+  #       # @properties = @properties.where(property_status: params[:property_status]) if params[:property_status] != "Status"
+  #       # @properties = @properties.where(location: params[:location]) if params[:location] != "Location"
+  # end
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_property
